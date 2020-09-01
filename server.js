@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes/cod");
+const routes = require("./routes")
+const routesCod = require("./routes/cod");
 const app = express();
 const bcrypt = require("bcrypt");
 const PORT = process.env.PORT || 3001;
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
+app.use(routesCod);
 
 // import routes 
 const codRoute = require('./routes/cod');
