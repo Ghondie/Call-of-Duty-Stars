@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ViewStats from "./ViewStats";
 import API from "../utils/API";
+import PlayerComponet from "./PlayerComponet";
+import Header from "./Header";
 
 
 
@@ -44,18 +46,23 @@ const MainScreen = () => {
         </div>
     )
 
-    return (
+    return (     
+     
         <div>
+                <Header/>
             <h1> Main Screen Homies!</h1>
             <form>
                 <input onChange={evt => handleFormChange(evt)} placeholder={"MG2020#1853"} name={developerState.playerId} />
                 <button onClick={viewStatsBtn}>View Stats</button>
             </form>
             <ViewStats playerId={developerState.playerId} />
-            
+            <PlayerComponet/>
+      
+
         </div>
         
     )
+
 }
 
 export default MainScreen;
