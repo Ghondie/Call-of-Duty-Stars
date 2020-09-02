@@ -5,6 +5,7 @@
   "main": "index.js",
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "axios": "^0.20.0",
     "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
