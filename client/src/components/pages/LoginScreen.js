@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import API from "../../utils/API";
 import MainScreen from "../MainScreen";
+import Header from "../Header";
 
 
 const LoginScreen = () => {
@@ -9,7 +10,7 @@ const LoginScreen = () => {
     const [developerState, setDeveloperState] = useState({
         username: "",
         password: "",
-        login: true
+        login: false
       });
 
 
@@ -53,7 +54,8 @@ const LoginScreen = () => {
     
     return (
         <div>
-            <Link to="/signup"><button>Sign Up Page</button></Link>
+           
+           <Header/>
             <h1>Log In!</h1>
             <form>
                 <div>
