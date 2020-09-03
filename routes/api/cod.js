@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post');
+const Post = require('../../models/Post');
 const API = require('call-of-duty-api')({
     platform: "battle"
 });
-const Match = require('../models/match');
-const { findById } = require('../models/Post');
+const Match = require('../../models/match');
+const { findById } = require('../../models/Post');
 require('dotenv/config');
 
 
