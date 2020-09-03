@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import API from "../utils/API";
 
-const ViewStats = (props) => {
+const ViewStats = ({stats}) => {
 
-    const [playerState, setPlayerState] = useState({
-        id: "",
-        player: props.playerId,
-        wins: ""
-    })
+    const [playerState, setPlayerState] = useState(stats)
 
     const showData = (evt) => {
         evt.preventDefault();
@@ -31,9 +27,14 @@ const ViewStats = (props) => {
     return (
         <div>
             <h3>Player Stats</h3>
-            <p>Player Name {playerState.player}</p>
-            <p>Wins {playerState.wins}</p>
-            <button onClick={showData}>Data</button>
+             <p>Player Name {stats.player}</p>
+            <p>kills {playerState.start_kills}</p>
+            <p>downs {playerState.start_downs}</p>
+            <p>revives {playerState.start_revives}</p>
+            <p>deaths {playerState.start_deaths}</p>
+            {/* <button onClick={showData}>Data</button>  */}
+           
+
         </div>
     )
 }
