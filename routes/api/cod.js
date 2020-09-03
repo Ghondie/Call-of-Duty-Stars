@@ -6,6 +6,8 @@ const API = require('call-of-duty-api')({
 });
 const Match = require('../../models/match');
 const { findById } = require('../../models/Post');
+const { mongo } = require('mongoose');
+const cod = require('../../models/match');
 require('dotenv/config');
 
 
@@ -20,19 +22,16 @@ router.post('/', async (req, res) => {
             data: await API.MWBattleData(item)
         });
     }
-    // res.json(scoreArr)
-
-    //prep loop for mongodb
 
     const coddata = Object.values(scoreArr).map(obj => {
         const brall = obj.data.br_all
-        console.log(obj)
+        // console.log(obj)
         return {
             player: obj.username,
             start_kills: brall.kills,
             start_deaths: brall.deaths,
             start_downs: brall.downs,
-            start_revives: brall.revives,
+            start_revives: brall.revives 
         }
 
     })
@@ -40,9 +39,25 @@ router.post('/', async (req, res) => {
         players: coddata,
         expiration: new Date()
     }
-    Match.create(mongoobj)
-    res.json(coddata);
+    const dataArr = [];
+    Match.create(mongoobj, (err, data) => {
+        console.log("ayo data check", data._id);
+        const newObj = {
+            players: coddata,
+            expiration: mongoobj.expiration,
+            _id: data._id
+        }
+        console.log("ayo mongoobj check", newObj)
+        res.json(newObj);
+    })
+})
 
+router.get("/get/:id", (req, res) => {
+    console.log("req.body check", req.params.id)
+    Match.findById(req.params.id, (err, data) => {
+        console.log("Get check: ", data);
+        res.json(data)
+    })
 })
 
 
