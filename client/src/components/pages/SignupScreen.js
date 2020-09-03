@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import API from "../../utils/API";
+import Header from "../Header";
 
 
 const SignupScreen = () => {
@@ -44,7 +45,8 @@ const SignupScreen = () => {
     
     return (
         <div>
-            <Link to="/"><button>Login Page</button></Link>
+             <Header/>
+
             <h1>Sign Up!</h1>
             <form>
                 <div>

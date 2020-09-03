@@ -1,43 +1,42 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
+import FilledInput from '@material-ui/core/FilledInput';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    '& > *': {
+      margin: theme.spacing(1),
+    },
   },
 }));
 
-
-
-export default function CenteredGrid() {
+export default function ComposedTextField() {
+  const [player1, setPlayer1] = React.useState('');
   const classes = useStyles();
+
+  const handleChange = (event) => {
+    setPlayer1(event.target.value);
+  };
+
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=3</Paper>
-        </Grid>
-      </Grid>
-    </div>
+    <form className={classes.root} noValidate autoComplete="off">
+     
+      <FormControl>
+        <InputLabel htmlFor="Player1">Player 1</InputLabel>
+        <Input
+          id="Player1"
+          value={player1}
+          onChange={handleChange}
+          aria-describedby="Player1-text"
+        />
+        <FormHelperText id="Player1-text">HEY BATTLE TAG</FormHelperText>
+      </FormControl>
+      
+    </form>
   );
 }

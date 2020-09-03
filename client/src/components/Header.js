@@ -1,10 +1,12 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Image from "../images/Banner.png";
+import React from 'react';
+import {Link} from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Image from '../images/Banner.png'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,12 +22,13 @@ const useStyles = makeStyles((theme) => ({
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+
+    position: 'absolute',
+    pointerEvents: 'hover',
+
+    alignItems: 'flex-end',
+    justifyContent: 'right',
+    right: '10px'
   },
 }));
 export default function ButtonAppBar() {
@@ -34,11 +37,16 @@ export default function ButtonAppBar() {
     <div>
       <AppBar className={classes.root} position="static">
         <Toolbar>
-          <img src={Image} />
+      
+            
+      <img src={Image}/> 
           {/* <Typography variant="h6" className={classes.title}>
             News
           </Typography> */}
-          <Button>Login</Button>
+          <div className= {classes.searchIcon}>
+          <Link to="/"><button >Sign in</button></Link>
+          <Link to="/signup"><button >Sign up</button></Link>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

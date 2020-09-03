@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import PlayerOne from "./PlayerOne/PlayerOne";
+import PlayerTwo from "./PlayerTwo/PlayerTwo";
+import PlayerThree from "./PlayerThree/PlayerThree";
+import PlayerFour from "./PlayerFour/PlayerFour";
 
 const ViewStats = (props) => {
+  console.log("ayo props check: " + props.player1.player);
   const [playerState, setPlayerState] = useState({
-    id: "",
-    player: props.playerId,
-    wins: "",
+    matchId: props.matchId,
+    player1: props.player1.player,
+    player2: props.player2.player,
+    player3: props.player3.player,
+    player4: props.player4.player,
+  });
+
+  const [statsState, setStatsState] = useState({
+    player1: "",
+    player2: "",
+    player3: "",
+    player4: "",
   });
 
   const showData = (evt) => {
     evt.preventDefault();
-    API.getStats()
-      .then((res) => updateStats(playerState.player))
+    // pullName()
+    API.getMatch(playerState.matchId)
+      .then((result) =>
+        setStatsState({
+          player1: result.data.players[0],
+          player2: result.data.players[1],
+          player3: result.data.players[2],
+          player4: result.data.players[3],
+        })
+      )
       .catch((err) => console.log(err));
   };
-
-  const updateStats = (player) => {
-    API.getId({ player: player, wins: playerState.wins })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
-
-  // const playerStats1 = () => {
-  //     API.getPlayerStats({ player: props.playerId })
-  //     .then(res => setPlayerState({ ...playerState, wins: res.wins }))
-  // }
-  // playerStats1();
 
   return (
     <div>
-      <h3>Player Stats</h3>
-      <p>Player Name {playerState.player}</p>
-      <p>Wins {playerState.wins}</p>
-      <button onClick={showData}>Data</button>
+      <PlayerOne player1={statsState.player1} />
+      <PlayerTwo player2={statsState.player2} />
+      <PlayerThree player3={statsState.player3} />
+      <PlayerFour player4={statsState.player4} />
+      <button onClick={(evt) => showData(evt)}> Data </button>
+      <p> Player name: {statsState.player1.player}</p>
+      <p> Kills: {statsState.player1.start_kills}</p>
+      <p> Deaths: {statsState.player1.start_deaths}</p>
     </div>
   );
 };

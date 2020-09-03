@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes")
-const routesCod = require("./routes/cod");
+// const routesCod = require("./routes/cod");
 const app = express();
 const bcrypt = require("bcrypt");
 const PORT = process.env.PORT || 3001;
@@ -21,11 +21,12 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
-app.use(routesCod);
+// app.use(routesCod);
 
-// import routes 
-const codRoute = require('./routes/cod');
-app.use('/cod', codRoute);
+// import routes
+ 
+// const codRoute = require('./routes/cod');
+// app.use('/cod', codRoute);
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/codauth",

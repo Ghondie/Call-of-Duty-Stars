@@ -1,16 +1,19 @@
 import React from "react";
 import "./style.css";
+import Picture from "../../images/Ghost.png";
 
 function PlayerOne(props) {
-  <div>
-    <card className="image" src="../images/Ghost.png">
-      <h1> Username {props.players[0].player}</h1>
-      <h4> Kills: {props.player[0].start_kills} </h4>
-      <h4> Deaths: {props.player[0].start_deaths} </h4>
-      <h4> Downs: {props.player[0].start_downs} </h4>
-      <h4> Revives: {props.player[0].start_revives} </h4>
-    </card>
-  </div>;
+  return (
+    <div>
+      <div style={{ backgroundImage: `url(${Picture})` }}>
+        <h1> Username {props.player1.player}</h1>
+        <h4> Kills: {props.player1.start_kills} </h4>
+        <h4> Deaths: {props.player1.start_deaths} </h4>
+        <h4> Downs: {props.player1.start_downs} </h4>
+        <h4> Revives: {props.player1.start_revives} </h4>
+      </div>
+    </div>
+  );
 }
 
 export default PlayerOne;

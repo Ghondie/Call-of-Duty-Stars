@@ -11,16 +11,19 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/user/signup", userData)
   },
-  getStats: function() {
-    return axios.get("/api/stats")
+  matchUpdate: async function() {
+    return await axios.get("/api/cod")
   },
-  saveStats: function(playerData) {
-    return axios.post(`/api/stats/player/${playerData}`)
+  createMatch: async function(playerData) {
+    return await axios.post("/api/cod", playerData)
   },
-  getId: function(playerData) {
-    return axios.post("/api/stats/getId", playerData)
-  },
-  getPlayerStats: function(playerData) {
-    return axios.get(`/api/stats/player/${playerData}`)
+  // getId: function(playerData) {
+  //   return axios.post("/api/cod/getId", playerData)
+  // },
+  // getPlayerStats: function(playerData) {
+  //   return axios.get(`/api/cod/player/${playerData}`)
+  // }
+  getMatch: async function(player) {
+    return await axios.get(`/api/cod/get/${player}`)
   }
 };
