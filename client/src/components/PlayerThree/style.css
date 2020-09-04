@@ -1,11 +1,15 @@
 h1 {
   text-align: center;
+  color: aliceblue;
 }
 
 h4 {
   text-align: center;
+  color: aliceblue;
+  padding: 20px;
 }
 
-img {
-  width: 20%;
+.playerCard {
+  height: 450px;
+  width: 20vw;
 }
