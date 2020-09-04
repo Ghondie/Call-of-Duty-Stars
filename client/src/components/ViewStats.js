@@ -39,10 +39,12 @@ const ViewStats = (props) => {
 
   return (
     <div>
-      <PlayerOne player1={statsState.player1} />
-      <PlayerTwo player2={statsState.player2} />
-      <PlayerThree player3={statsState.player3} />
-      <PlayerFour player4={statsState.player4} />
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <PlayerOne player1={statsState.player1} />
+        <PlayerTwo player2={statsState.player2} />
+        <PlayerThree player3={statsState.player3} />
+        <PlayerFour player4={statsState.player4} />
+      </div>
       <button onClick={(evt) => showData(evt)}> Data </button>
       <p> Player name: {statsState.player1.player}</p>
       <p> Kills: {statsState.player1.start_kills}</p>
