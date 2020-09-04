@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import {Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     flexGrow: 1,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -39,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar() {
   const classes = useStyles();
   return (
-    <div >
+    <div>
       <AppBar className={classes.root} position="static">
         <Toolbar>
       
@@ -57,11 +54,6 @@ export default function ButtonAppBar() {
     </div>
   );
 }
-
-
-
-
-
 
 // import React from 'react';
 // // import { makeStyles } from '@material-ui/core/styles';

@@ -5,13 +5,19 @@ const Schema = mongoose.Schema;
 const codSchema = new Schema({
     winner: {
         type: String,
+        default: null,
         required: false
     },
     looser: {
         type: String,
+        default: null,
         required: false
     },
     players: [{
+        matchId: {
+            type: mongoose.Schema.Types.ObjectId,
+            default: mongoose.Types.ObjectId
+        },
         player: {
             type: String,
             required: true

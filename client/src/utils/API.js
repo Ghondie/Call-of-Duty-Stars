@@ -15,7 +15,7 @@ export default {
     return await axios.get("/api/cod")
   },
   createMatch: async function(playerData) {
-    return await axios.post("/api/cod",playerData)
+    return await axios.post("/api/cod", playerData)
   },
   // getId: function(playerData) {
   //   return axios.post("/api/cod/getId", playerData)
@@ -23,4 +23,7 @@ export default {
   // getPlayerStats: function(playerData) {
   //   return axios.get(`/api/cod/player/${playerData}`)
   // }
+  getMatch: async function(player) {
+    return await axios.get(`/api/cod/get/${player}`)
+  }
 };
