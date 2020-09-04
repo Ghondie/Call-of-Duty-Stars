@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ViewStats from "./ViewStats";
-import API from "../utils/API";
-import PlayerComponet from "./PlayerComponet";
-import Header from "./Header";
+import ViewStats from "../ViewStats";
+import API from "../../utils/API";
+import PlayerComponet from "../PlayerComponet";
+import Header from "../Header/Header";
+
+import styles from './MainScreen.css';
+
 
 
 
@@ -50,7 +53,7 @@ const MainScreen = () => {
         
         <div>
                 <Header/>
-            <h1> Main Screen Homies!</h1>
+            <h1>Enter Battletags of the players in your party. (Example: Sniperpro#123456)</h1>
             <form onSubmit= {onSubmit}>
                 <input onChange={evt => handleFormChange(evt)}data-id="player1" placeholder={"MG2020#1853"} name={playerState.player1} />
                 {/* <button onClick={viewStatsBtn}>View Stats</button> */}

@@ -8,7 +8,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Image from '../images/Banner.png'
+import Image from '../../images/Banner.png'
+import styles from './Header.css';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,8 +49,8 @@ export default function ButtonAppBar() {
             News
           </Typography> */}
           <div className= {classes.searchIcon}>
-          <Link to="/"><button >Sign in</button></Link>
-          <Link to="/signup"><button >Sign up</button></Link>
+          <Link to="/"><button className= "Login" > Login</button></Link>
+          <Link to="/signup"><button className= "SignUp">SignUp</button></Link>
           </div>
         </Toolbar>
       </AppBar>
