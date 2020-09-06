@@ -41,14 +41,16 @@ router.post('/', async (req, res) => {
     }
     const dataArr = [];
     Match.create(mongoobj, (err, data) => {
-        console.log("ayo data check", data._id);
-        const newObj = {
-            players: coddata,
-            expiration: mongoobj.expiration,
-            _id: data._id
-        }
-        console.log("ayo mongoobj check", newObj)
-        res.json(newObj);
+        // console.log("ayo data check", data._id);
+        // const newObj = {
+        //     players: coddata,
+        //     expiration: mongoobj.expiration,
+        //     _id: data._id
+        // }
+        console.log("\n ayo mongoobj check =========================================================================================================================\n")
+        console.log (data)
+        console.log("\n ayo mongoobj check =========================================================================================================================\n")
+        res.json(data);
     })
 })
 
@@ -106,15 +108,16 @@ router.put('/:matchId', async ({ params, body }, res) => {
 
     Object.values(scoreArr).map((obj, i) => {
         const brall = obj.data.br_all
-        const ps = game.players
+        // const ps = game.players
         // console.log(obj)
-        ps[i].kills = Math.abs(ps[i].start_kills - brall.kills)
-        ps[i].deaths = Math.abs(ps[i].start_deaths - brall.deaths)
-        ps[i].downs = Math.abs(ps[i].start_downs - brall.downs)
-        ps[i].revives = Math.abs(ps[i].start_revives - brall.revives)
+        game.players[i].kills = Math.abs(game.players[i].start_kills - brall.kills)
+        game.players[i].deaths = Math.abs(game.players[i].start_deaths - brall.deaths) 
+        game.players[i].downs = Math.abs(game.players[i].start_downs - brall.downs)
+        game.players[i].revives = Math.abs(game.players[i].start_revives - brall.revives)
+        game.players[i].points = game.players[i].revives + game.players[i].kills + game.players[i].downs - game.players[i].deaths
     })
-    Match.findByIdAndUpdate(params.matchId, { "players": game.players })
-    res.send("updatedMatch")
+     const updateResponse = await Match.findByIdAndUpdate(params.matchId,{$set:{ "players": game.players }},{overwrite:true})
+    res.json(updateResponse)
 });
 
 // Delete post

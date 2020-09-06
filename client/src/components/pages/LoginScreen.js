@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import API from "../../utils/API";
-import MainScreen from "../MainScreen";
-import Header from "../Header";
+import MainScreen from "../MainScreen/MainScreen";
+import Header from "../Header/Header";
+
 
 
 const LoginScreen = () => {
@@ -78,7 +79,7 @@ const LoginScreen = () => {
 
     return (
         <div>
-            <button onClick={(evt) => logOut(evt)}>Log Out</button>
+            {/* <button onClick={(evt) => logOut(evt)}>Log Out</button> */}
             <MainScreen />
         </div>
         

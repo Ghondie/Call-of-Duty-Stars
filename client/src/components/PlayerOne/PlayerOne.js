@@ -14,10 +14,15 @@ function PlayerOne(props) {
     >
       <div>
         <h1>{props.player1.player}</h1>
-        <h4> Kills: {props.player1.start_kills} </h4>
+        <h4> Kills: {props.player1.kills} </h4>
+        <h4> Deaths: {props.player1.deaths} </h4>
+        <h4> Downs: {props.player1.downs} </h4>
+        <h4> Revives: {props.player1.revives} </h4>
+        <h4> Points: {props.player1.points  } </h4>
+        {/* <h4> Kills: {props.player1.start_kills} </h4>
         <h4> Deaths: {props.player1.start_deaths} </h4>
         <h4> Downs: {props.player1.start_downs} </h4>
-        <h4> Revives: {props.player1.start_revives} </h4>
+        <h4> Revives: {props.player1.start_revives} </h4> */}
       </div>
     </div>
   );
