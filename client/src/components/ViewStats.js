@@ -39,7 +39,7 @@ const ViewStats = (props) => {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: "30px" }}>
         <PlayerOne player1={statsState.player1} />
         <PlayerTwo player2={statsState.player2} />
         <PlayerThree player3={statsState.player3} />

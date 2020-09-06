@@ -121,7 +121,7 @@ const MainScreen = () => {
         return (
             <div>
                     <Header/>
-                <h1> Main Screen Homies!</h1>
+                <h1> Your games are being saved</h1>
                 <form onSubmit= {onSubmit}>
                     <input onChange={evt => handleFormChange(evt)}data-id="player1" placeholder={"MG2020#1853"} name={playerState.player1} />
                     {/* <button onClick={viewStatsBtn}>View Stats</button> */}

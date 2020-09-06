@@ -6,8 +6,15 @@ color:whitesmoke
   border-color: red;
   color:whitesmoke;
 background: transparent;
-size: 20px
+size: 20px;
+margin: 10px;
 
+ }
+ .SignUp{
+  border-color: white;
+  color:red;
+background: transparent;
+size: 20px
  }
 
 

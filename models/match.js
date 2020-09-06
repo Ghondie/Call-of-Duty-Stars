@@ -57,7 +57,14 @@ const codSchema = new Schema({
         start_revives: {
             type: Number,
             required: true
-        }
+        },
+
+            points: {
+                type: Number,
+                default: 0,
+                required: true
+            }
+        
     }],
     expiration: {
         type: Date,
