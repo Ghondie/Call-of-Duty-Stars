@@ -14,10 +14,11 @@ function PlayerFour(props) {
     >
       <div>
         <h1>{props.player4.player}</h1>
-        <h4> Kills: {props.player4.start_kills} </h4>
-        <h4> Deaths: {props.player4.start_deaths} </h4>
-        <h4> Downs: {props.player4.start_downs} </h4>
-        <h4> Revives: {props.player4.start_revives} </h4>
+        <h4> Kills: {props.player4.kills} </h4>
+        <h4> Deaths: {props.player4.deaths} </h4>
+        <h4> Downs: {props.player4.downs} </h4>
+        <h4> Revives: {props.player4.revives} </h4>
+        <h4> Points: {props.player4.points  } </h4>
       </div>
     </div>
   );

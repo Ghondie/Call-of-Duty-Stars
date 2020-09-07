@@ -67,7 +67,7 @@ const codSchema = new Schema({
         
     }],
     expiration: {
-        type: Date,
+        type: Number,
         required: true
     }
 });

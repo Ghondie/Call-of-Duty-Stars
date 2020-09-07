@@ -35,9 +35,12 @@ router.post('/', async (req, res) => {
         }
 
     })
+    const timerDate= new Date()
     const mongoobj = {
         players: coddata,
-        expiration: new Date()
+        // expiration: timerDate.setTime(timerDate.getTime()+(1000*12*60*60))
+        expiration: Date.now() 
+        // UNIX HRS
     }
     const dataArr = [];
     Match.create(mongoobj, (err, data) => {
