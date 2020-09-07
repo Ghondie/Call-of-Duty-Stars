@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import API from "../../utils/API";
 import Header from "../Header/Header";
+import TeamJoin from "../teamJoin/teamjoin";
 
 
 const SignupScreen = () => {
@@ -60,6 +61,20 @@ const SignupScreen = () => {
 
                 <div>
                     <button onClick={submitForm}>Sign Up</button>
+                </div>
+            </form>
+            <form>
+                <div>
+                    <p>Join existing game</p>
+                    <input onChange={handleUserChange} value={developerState.username}></input>
+                </div>
+                {/* <div>
+                    <p>Password</p>
+                    <input onChange={handlePasswordChange} value={developerState.password}></input>
+                </div> */}
+
+                <div>
+                    <button onClick={submitForm}>Join</button>
                 </div>
             </form>
         </div>

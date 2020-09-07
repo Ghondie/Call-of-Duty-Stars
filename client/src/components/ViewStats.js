@@ -48,9 +48,9 @@ const ViewStats = (props) => {
           <PlayerOne player1={statsState.player1} />
         </div>
         <button onClick={(evt) => showData(evt)}> Data </button>
-        <p> Player name: {statsState.player1.player}</p>
+        {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
-        <p> Deaths: {statsState.player1.start_deaths}</p>
+        <p> Deaths: {statsState.player1.start_deaths}</p> */}
       </div>
     );
   } else if (playerState.player3 === "" && playerState.player4 === "") {
@@ -61,9 +61,9 @@ const ViewStats = (props) => {
           <PlayerTwo player2={statsState.player2} />
         </div>
         <button onClick={(evt) => showData(evt)}> Data </button>
-        <p> Player name: {statsState.player1.player}</p>
+        {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
-        <p> Deaths: {statsState.player1.start_deaths}</p>
+        <p> Deaths: {statsState.player1.start_deaths}</p> */}
       </div>
     );
   } else if (playerState.player4 === "") {
@@ -75,9 +75,9 @@ const ViewStats = (props) => {
           <PlayerThree player3={statsState.player3} />
         </div>
         <button onClick={(evt) => showData(evt)}> Data </button>
-        <p> Player name: {statsState.player1.player}</p>
+        {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
-        <p> Deaths: {statsState.player1.start_deaths}</p>
+        <p> Deaths: {statsState.player1.start_deaths}</p> */}
       </div>
     );
   } else {
@@ -90,9 +90,9 @@ const ViewStats = (props) => {
           <PlayerFour player4={statsState.player4} />
         </div>
         <button onClick={(evt) => showData(evt)}> Data </button>
-        <p> Player name: {statsState.player1.player}</p>
+        {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
-        <p> Deaths: {statsState.player1.start_deaths}</p>
+        <p> Deaths: {statsState.player1.start_deaths}</p> */}
       </div>
     );
   }

@@ -3,6 +3,8 @@ import ViewStats from "../ViewStats";
 import API from "../../utils/API";
 import PlayerComponet from "../PlayerComponet";
 import Header from "../Header/Header";
+import Timer from "../Timer/timer";
+
 
 import styles from './MainScreen.css';
 
@@ -15,6 +17,8 @@ const MainScreen = () => {
     player2: "",
     player3: "",
     player4: "",
+    expiration: 1,
+    expired: false
   });
 
   const [stateState, setStateState] = useState(false);
@@ -48,6 +52,7 @@ const MainScreen = () => {
       player2: response.data.players[1] || "",
       player3: response.data.players[2] || "",
       player4: response.data.players[3] || "",
+      expiration: response.data.expiration || null,
     });
   };
   useEffect(() => {
@@ -66,7 +71,7 @@ const MainScreen = () => {
     return (
       <div>
         <Header />
-        <h1> Main Screen Homies!</h1>
+        <h1> Enter Battletags of the players in your party. (Example: Sniperpro#123456)</h1>
         <form onSubmit={onSubmit}>
           <input
             onChange={(evt) => handleFormChange(evt)}
@@ -115,40 +120,41 @@ const MainScreen = () => {
     return (
       <div>
         <Header />
-        <h1> Main Screen Homies!</h1>
-        <form onSubmit={onSubmit}>
+        <h1>SESSION TIMEOUT</h1>
+        {playerStatsState.expiration ?<Timer time={playerStatsState.expiration}/>:"Loading time"}
+        {/* <form onSubmit={onSubmit}>
           <input
             onChange={(evt) => handleFormChange(evt)}
             data-id="player1"
             placeholder={"MG2020#1853"}
             name={playerState.player1}
           />
-          {/* <button onClick={viewStatsBtn}>View Stats</button> */}
+          
           <input
             onChange={(evt) => handleFormChange(evt)}
             data-id="player2"
             placeholder={"MG2020#1853"}
             name={playerState.player2}
           />
-          {/* <button onClick={viewStatsBtn}>View Stats</button> */}
+          
           <input
             onChange={(evt) => handleFormChange(evt)}
             data-id="player3"
             placeholder={"MG2020#1853"}
             name={playerState.player3}
           />
-          {/* <button onClick={viewStatsBtn}>View Stats</button> */}
+          
           <input
             onChange={(evt) => handleFormChange(evt)}
             data-id="player4"
             placeholder={"MG2020#1853"}
             name={playerState.player4}
           />
-          {/* <button type="submit">Submit</button> */}
+         
           <button type="button" onClick={onSubmit}>
             Submit
           </button>
-        </form>
+        </form> */}
         <ViewStats
           matchId={playerStatsState.matchId}
           player1={playerStatsState.player1}

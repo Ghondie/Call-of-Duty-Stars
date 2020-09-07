@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Image from '../../images/Banner.png'
-import styles from './Header.css';
+import Timer from "../Timer/timer";
 
 
 
@@ -39,12 +39,14 @@ export default function ButtonAppBar() {
     <div>
       <AppBar className={classes.root} position="static">
         <Toolbar>
+         
       
             
       <img src={Image}/> 
           {/* <Typography variant="h6" className={classes.title}>
             News
           </Typography> */}
+
           <div className= {classes.searchIcon}>
           <Link to="/"><button className= "Login" > Login</button></Link>
           <Link to="/signup"><button className= "SignUp">SignUp</button></Link>

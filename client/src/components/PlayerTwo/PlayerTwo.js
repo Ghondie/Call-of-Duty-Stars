@@ -13,11 +13,12 @@ function PlayerTwo(props) {
       }}
     >
       <div>
-        <h1> {props.player2.player}</h1>
-        <h4> Kills: {props.player2.start_kills} </h4>
-        <h4> Deaths: {props.player2.start_deaths} </h4>
-        <h4> Downs: {props.player2.start_downs} </h4>
-        <h4> Revives: {props.player2.start_revives} </h4>
+      <h1>{props.player2.player}</h1>
+      <h4> Kills: {props.player2.kills} </h4>
+        <h4> Deaths: {props.player2.deaths} </h4>
+        <h4> Downs: {props.player2.downs} </h4>
+        <h4> Revives: {props.player2.revives} </h4>
+        <h4> Points: {props.player2.points  } </h4>
       </div>
     </div>
   );
