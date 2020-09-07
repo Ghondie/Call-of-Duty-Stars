@@ -25,7 +25,7 @@ To contribute to COD Stars, follow these steps:
 Fork this repository.
 Create a branch: git checkout -b <branch_name>.
 Make your changes and commit them: git commit -m '<commit_message>'
-Push to the original branch: git push origin COD Stars/<location>
+Push to the original branch: git push origin <location>
 Create the pull request.
 Alternatively see the GitHub documentation on creating a pull request.
 
