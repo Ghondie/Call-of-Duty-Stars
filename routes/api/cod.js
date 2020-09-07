@@ -70,7 +70,7 @@ router.get("/get/:id", (req, res) => {
 // gets back all
 router.get('/', async (req, res) => {
     try {
-        const posts = await Post.find();
+        const posts = await Match.find();
         res.json(posts);
     } catch (err) {
         res.json({
