@@ -11,8 +11,8 @@ export default {
   saveUser: function(userData) {
     return axios.post("/api/user/signup", userData)
   },
-  matchUpdate: async function() {
-    return await axios.get("/api/cod")
+  matchUpdate: async function(matchId) {
+    return await axios.put(`/api/cod/${matchId}`)
   },
   createMatch: async function(playerData) {
     return await axios.post("/api/cod", playerData)
