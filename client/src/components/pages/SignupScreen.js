@@ -63,7 +63,7 @@ const SignupScreen = () => {
                     <button onClick={submitForm}>Sign Up</button>
                 </div>
             </form>
-            <form>
+            {/* <form>
                 <div>
                     <p>Join existing game</p>
                     <input onChange={handleUserChange} value={developerState.username}></input>
@@ -73,10 +73,10 @@ const SignupScreen = () => {
                     <input onChange={handlePasswordChange} value={developerState.password}></input>
                 </div> */}
 
-                <div>
+                {/* <div>
                     <button onClick={submitForm}>Join</button>
-                </div>
-            </form>
+                </div> */}
+            {/* </form> */}
         </div>
     )
 }
