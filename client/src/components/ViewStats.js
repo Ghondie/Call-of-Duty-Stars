@@ -22,8 +22,7 @@ const ViewStats = (props) => {
     player4: "",
   });
 
-  const showData = (evt) => {
-    evt.preventDefault();
+  const showData = () => {
     // pullName()
     API.getMatch(playerState.matchId)
       .then((result) =>
@@ -37,6 +36,22 @@ const ViewStats = (props) => {
       .catch((err) => console.log(err));
   };
 
+  const updateData = (evt) => {
+    evt.preventDefault();
+    API.matchUpdate(playerState.matchId)
+      .then(result => 
+        setStatsState({
+          player1: result.data.players[0] || "",
+          player2: result.data.players[1] || "",
+          player3: result.data.players[2] || "",
+          player4: result.data.players[3] || "",
+        }))
+  }
+
+  useEffect(() => {
+    showData()
+  }, [])
+
   if (
     playerState.player2 === "" &&
     playerState.player3 === "" &&
@@ -47,7 +62,7 @@ const ViewStats = (props) => {
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           <PlayerOne player1={statsState.player1} />
         </div>
-        <button onClick={(evt) => showData(evt)}> Data </button>
+        <button onClick={(evt) => updateData(evt)}> Update </button>
         {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
         <p> Deaths: {statsState.player1.start_deaths}</p> */}
@@ -60,7 +75,7 @@ const ViewStats = (props) => {
           <PlayerOne player1={statsState.player1} />
           <PlayerTwo player2={statsState.player2} />
         </div>
-        <button onClick={(evt) => showData(evt)}> Data </button>
+        <button onClick={(evt) => updateData(evt)}> Update </button>
         {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
         <p> Deaths: {statsState.player1.start_deaths}</p> */}
@@ -74,7 +89,7 @@ const ViewStats = (props) => {
           <PlayerTwo player2={statsState.player2} />
           <PlayerThree player3={statsState.player3} />
         </div>
-        <button onClick={(evt) => showData(evt)}> Data </button>
+        <button onClick={(evt) => updateData(evt)}> Update </button>
         {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
         <p> Deaths: {statsState.player1.start_deaths}</p> */}
@@ -89,7 +104,7 @@ const ViewStats = (props) => {
           <PlayerThree player3={statsState.player3} />
           <PlayerFour player4={statsState.player4} />
         </div>
-        <button onClick={(evt) => showData(evt)}> Data </button>
+        <button onClick={(evt) => updateData(evt)}> Update </button>
         {/* <p> Player name: {statsState.player1.player}</p>
         <p> Kills: {statsState.player1.start_kills}</p>
         <p> Deaths: {statsState.player1.start_deaths}</p> */}
