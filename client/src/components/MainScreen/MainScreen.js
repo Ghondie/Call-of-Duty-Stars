@@ -83,7 +83,7 @@ const MainScreen = () => {
           <input
             onChange={(evt) => handleFormChange(evt)}
             data-id="player2"
-            placeholder={"MG2020#1853"}
+            placeholder={"Ghondie#1663"}
             name={playerState.player2}
           />
           {/* <button onClick={viewStatsBtn}>View Stats</button> */}

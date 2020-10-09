@@ -2,20 +2,29 @@
 background: #2A203D;
 color:whitesmoke
   } */
- .Login{
-  border-color: red;
-  color:whitesmoke;
-background: transparent;
-size: 20px;
-margin: 10px;
+.Login,
+.About,
+.SignUp {
+	border-color: red;
+	color: whitesmoke;
+	background: transparent;
+	size: 20px;
+	margin: 10px;
+}
+/* .SignUp {
+	border-color: red;
+	color: whitesmoke;
+	background: transparent;
+	size: 20px;
+}
+.About {
+	border-color: red;
+	color: whitesmoke;
+	background: transparent;
+	size: 20px;
+} */
+/* button {
+	margin: 10px;
+} */
 
- }
- .SignUp{
-  border-color: white;
-  color:red;
-background: transparent;
-size: 20px
- }
-
-
-  /* Make buttons differen colors. Change sign in to sign up. Make banner smaller */
+/* Make buttons differen colors. Change sign in to sign up. Make banner smaller */
