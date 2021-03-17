@@ -10,54 +10,54 @@ import Timer from "../Timer/timer";
 import "./Header.css";
 
 const useStyles = makeStyles((theme) => ({
-	root: {
-		// background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-		flexGrow: 1,
-		backgroundColor: "#000000",
-	},
-	menuButton: {
-		marginRight: theme.spacing(2),
-	},
-	title: {
-		flexGrow: 1,
-	},
-	searchIcon: {
-		padding: theme.spacing(0, 2),
+    root: {
+        // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        flexGrow: 1,
+        backgroundColor: "#000000",
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        flexGrow: 1,
+    },
+    searchIcon: {
+        padding: theme.spacing(0, 2),
 
-		position: "absolute",
-		pointerEvents: "hover",
+        position: "absolute",
+        pointerEvents: "hover",
 
-		alignItems: "flex-end",
-		justifyContent: "right",
-		right: "10px",
-	},
+        alignItems: "flex-end",
+        justifyContent: "right",
+        right: "10px",
+    },
 }));
 export default function ButtonAppBar() {
-	const classes = useStyles();
-	return (
-		<div>
-			<AppBar className={classes.root} position="static">
-				<Toolbar>
-					<img src={Image} />
-					{/* <Typography variant="h6" className={classes.title}>
+    const classes = useStyles();
+    return (
+        <div>
+            <AppBar className={classes.root} position="static">
+                <Toolbar>
+                    <img src={Image} />
+                    {/* <Typography variant="h6" className={classes.title}>
             News
           </Typography> */}
 
-					<div className={classes.searchIcon}>
-						<Link to="/">
-							<button className="Login"> Play</button>
-						</Link>
-						<Link to="/signup">
-							<button className="SignUp">SignUp</button>
-						</Link>
-						<Link to="/about">
-							<button className="About"> About </button>
-						</Link>
-					</div>
-				</Toolbar>
-			</AppBar>
-		</div>
-	);
+                    <div className={classes.searchIcon}>
+                        <Link to="/">
+                            <button className="Login"> About</button>
+                        </Link>
+                        <Link to="/signup">
+                            <button className="SignUp">SignUp</button>
+                        </Link>
+                        <Link to="/Play">
+                            <button className="Play"> Play </button>
+                        </Link>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
 }
 
 // import React from 'react';

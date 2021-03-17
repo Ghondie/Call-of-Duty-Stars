@@ -3,13 +3,13 @@ background: #2A203D;
 color:whitesmoke
   } */
 .Login,
-.About,
+.Play,
 .SignUp {
-	border-color: red;
-	color: whitesmoke;
-	background: transparent;
-	size: 20px;
-	margin: 10px;
+    border-color: red;
+    color: whitesmoke;
+    background: transparent;
+    size: 20px;
+    margin: 10px;
 }
 /* .SignUp {
 	border-color: red;

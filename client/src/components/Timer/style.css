@@ -1,11 +1,11 @@
 .timer {
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
-    text-align: center;
-    padding-top: 40px;
-  }
-  
-  .time {
-    font-size: 32px;
-  }
+	display: flex;
+	justify-content: center;
+	font-family: sans-serif;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.time {
+	font-size: 32px;
+}
