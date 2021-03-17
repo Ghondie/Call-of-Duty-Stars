@@ -19,6 +19,7 @@ function Play(props) {
         <div>
             <Header />
             <div id="aboutContainer">
+                <h1 id="demo-game">Demo Game</h1>
                 <container
                     id="Colab"
                     className="playerCard"
@@ -37,7 +38,7 @@ function Play(props) {
                         <li>Enter your partys battletag</li>
                         <li>Play warzone</li>
                         <li>Update your score when you are out of the game</li>
-                        <li>Due to activisions servers update take a minute so be patient</li>
+                        <li>Due to activisions servers update takes up to 15 minutes so be patient</li>
                     </ul>
                     <h1>How scoring works</h1>
                     <ul>
@@ -46,10 +47,13 @@ function Play(props) {
                         <li>Downs +1 Points </li>
                         <li>Revives +1 Points </li>
                     </ul>
+                    <Link to="/Play">
+                        <button id="play" className="Play">
+                            {" "}
+                            Play
+                        </button>
+                    </Link>
                 </container>
-                <Link to="/Play">
-                    <button className="Login"> Play</button>
-                </Link>
             </div>
         </div>
     );

@@ -1,32 +1,40 @@
 #aboutContainer {
-	display: flex;
+    display: block;
 }
-#Abouts {
-	display: block;
-	justify-items: stretch;
-	grid-area: main;
-	/* align-self: flex-end; */
-	width: 40%;
-	margin: 20px;
-	/* padding: 16px; */
-	/* box-sizing: border-box; */
-	border: 2px solid red;
-	/* border-color: white; */
-	border-radius: 10;
+h1 {
+    margin: unset;
 }
+
 #Colab {
-	display: block;
-	grid-area: sidebar;
-	align-self: start;
-	width: 60%;
-	margin: 20px;
-	/* padding: 16px; */
-	/* box-sizing: border-box; */
-	border: 2px solid red;
-	/* border-color: white; */
-	border-radius: 10;
+    display: inline-block;
+    grid-area: sidebar;
+    align-self: start;
+    width: 60%;
+    margin: 20px;
+    /* padding: 16px; */
+    /* box-sizing: border-box; */
+    /* border: 2px solid red; */
+    /* border-color: white; */
+    border-radius: 10;
+}
+
+#Abouts {
+    display: inline-block;
+    /* justify-items: stretch; */
+    /* grid-area: main; */
+    /* align-self: flex-end; */
+    width: 50%;
+    margin: 20px;
+    /* padding: 16px; */
+    /* box-sizing: border-box; */
+    /* border: 2px solid red; */
+    /* border-color: white; */
+    border-radius: 10;
 }
 li {
-	text-align-last: left;
-	color: whitesmoke;
+    text-align-last: left;
+    color: whitesmoke;
+}
+#play {
+    size: 10px;
 }
