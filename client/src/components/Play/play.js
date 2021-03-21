@@ -48,10 +48,12 @@ function Play(props) {
                         <li>Revives +1 Points </li>
                     </ul>
                     <Link to="/Play">
-                        <button id="play" className="Play">
-                            {" "}
-                            Play
-                        </button>
+                        <span>
+                            <button id="play" className="Play">
+                                {/* {" "} */}
+                                Play
+                            </button>
+                        </span>
                     </Link>
                 </container>
             </div>
