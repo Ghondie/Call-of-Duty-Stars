@@ -37,4 +37,9 @@ li {
 }
 #play {
     font-size: 20px;
+    border-color: transparent;
+}
+#play:hover {
+    border-color: red;
+    transform: translate(100ms);
 }
